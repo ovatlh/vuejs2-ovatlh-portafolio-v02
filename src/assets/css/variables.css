@@ -1,0 +1,21 @@
+:root {
+  /* Body */
+  --body-bg: #000000;
+  --body-clr: #ffffff;
+  --body-fontfamily: "Poppins";
+
+  /* AppVue */
+  --footer-bg: hsl(215, 75%, 3%);
+  --footer-clr: hsl(0, 0%, 100%);
+
+  /* Views */
+  /* Home */
+  --home-bg: hsl(215, 65%, 5%);
+  /* Proyectos */
+  --proyecto-bg: hsl(215, 68%, 3%);
+  --proyecto-shadow: hsl(215, 65%, 3%);
+  --proyecto-clr: hsl(0, 0%, 100%);
+  --todos-bg: hsl(215, 68%, 6%);
+  --todos-bg-hover: hsl(215, 68%, 3%);
+  --todos-clr: hsl(0, 0%, 100%);
+}

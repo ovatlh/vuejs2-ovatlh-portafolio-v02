@@ -190,6 +190,17 @@ export default {
   position: relative;
 }
 
+.no-proyecto {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+.no-proyecto h1 {
+  text-align: center;
+  padding: 10px;
+}
+
 .cover {
   z-index: 1;
   width: 100%;

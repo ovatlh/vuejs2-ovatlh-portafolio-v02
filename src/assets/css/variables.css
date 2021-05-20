@@ -25,4 +25,8 @@
   --todos-bg: hsl(215, 68%, 6%);
   --todos-bg-hover: hsl(215, 68%, 3%);
   --todos-clr: hsl(0, 0%, 100%);
+
+  /* Navbar */
+  /* Movil */
+  --btm-menu-shadow: hsla(216, 63%, 3%, 0.4);
 }

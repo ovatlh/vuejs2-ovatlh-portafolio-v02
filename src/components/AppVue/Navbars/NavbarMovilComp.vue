@@ -67,6 +67,17 @@ export default {
     opacity: 1;
   }
 }
+
+.menu {
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  justify-self: end;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  filter: drop-shadow(0px 0px 5px var(--btm-menu-shadow));
+}
 </style>
 
 <style>
@@ -82,19 +93,10 @@ export default {
   border-radius: 6px;
   padding: 5px 10px;
   font-weight: 600;
+  filter: drop-shadow(0px 0px 5px var(--btm-menu-shadow));
 }
 
 .movil .link:hover {
   background-color: hsl(0, 0%, 85%);
 } 
-
-.menu {
-  width: 40px;
-  height: 40px;
-  font-size: 16px;
-  justify-self: end;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
 </style>

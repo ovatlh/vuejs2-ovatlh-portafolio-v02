@@ -52,11 +52,32 @@ export default {
   z-index: 1;
 }
 
+/* .view-enter-active {
+  animation: enter-anim 0.1s ease-in-out 0s 1 normal forwards;
+}
+
+.view-leave-active {
+  animation: enter-anim 0.1s ease-in-out 0s 1 reverse forwards;
+}
+
+@keyframes enter-anim {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+} */
+
 .footer {
   z-index: 2;
 }
 
-.pc, .movil {
+.pc,
+.movil {
   position: fixed;
   z-index: 3;
 }

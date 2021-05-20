@@ -36,7 +36,8 @@ export default {
   display: grid;
   gap: 100px;
   padding: 30px 30px 60px 30px;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(auto, 1400px);
+  justify-content: center;
 }
 
 /* .proyectos, .servicios, .tecnologias, .sobremi {

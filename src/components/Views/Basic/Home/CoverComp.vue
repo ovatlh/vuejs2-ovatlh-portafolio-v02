@@ -4,7 +4,7 @@
     <div v-rellax="rellax.content" class="content">
       <div class="text">
         <h1 class="tavo">Tavo</h1>
-        <p class="lh">López Hernández</p>
+        <h3 class="lh">López Hernández</h3>
       </div>
     </div>
     <img v-rellax="rellax.img03" :src="bg03" alt="bg-03" class="img img-03" />
@@ -85,12 +85,17 @@ export default {
 .content {
   z-index: 2;
   display: grid;
+  grid-template-areas: "Content";
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
   place-items: center;
+  background: radial-gradient(hsla(0, 0%, 0%, 0.5), hsla(0, 0%, 0%, 0));
 }
 
 .tavo {
   font-size: clamp(40px, 10vw, 300px);
   line-height: clamp(40px, 10vw, 300px);
+  text-align: center;
 }
 
 .lh {

@@ -16,11 +16,17 @@ export default {
   },
   name: "home-view",
   props: [],
-  mounted() {},
+  mounted() {
+    this.mth_Titulo();
+  },
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    mth_Titulo() {
+      document.title = "Inicio | @ovatlh";
+    },
+  },
   computed: {},
 };
 </script>

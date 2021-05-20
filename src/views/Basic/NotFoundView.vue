@@ -1,6 +1,9 @@
 <template>
   <div class="notfound-view">
-    <h1>notfound-view Component</h1>
+    <div class="content">
+      <h1 class="title">Parece que nos perdimos 😅...</h1>
+      <h1 class="title">404</h1>
+    </div>
   </div>
 </template>
 
@@ -8,16 +11,30 @@
 export default {
   name: "notfound-view",
   props: [],
-  mounted() {},
+  mounted() {
+    this.mth_Titulo();
+  },
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    mth_Titulo() {
+      document.title = "404 | @ovatlh";
+    },
+  },
   computed: {},
 };
 </script>
 
 <style scoped>
 .notfound-view {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background-color: var(--home-bg);
+}
+
+.title {
+  text-align: center;
 }
 </style>

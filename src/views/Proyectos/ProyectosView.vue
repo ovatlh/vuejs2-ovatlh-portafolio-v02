@@ -28,11 +28,17 @@ export default {
   },
   name: "proyectos-view",
   props: [],
-  mounted() {},
+  mounted() {
+    this.mth_Titulo();
+  },
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    mth_Titulo() {
+      document.title = "Proyectos | @ovatlh";
+    },
+  },
   computed: {
     ...mapGetters({
       cmp_ResumenProyectos: "get_ResumenProyectos",

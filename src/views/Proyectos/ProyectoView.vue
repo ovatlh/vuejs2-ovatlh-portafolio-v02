@@ -91,6 +91,7 @@ export default {
   beforeRouteUpdate(to, from, next) {
     this.id = to.params.id;
     this.mth_tCarousel_tInit();
+    this.mth_Titulo();
     next();
   },
   beforeDestroy() {
@@ -98,6 +99,7 @@ export default {
   },
   mounted() {
     this.mth_tCarousel_tInit();
+    this.mth_Titulo();
   },
   data() {
     return {
@@ -112,6 +114,9 @@ export default {
     mth_tCarousel_tClear() {
       // eslint-disable-next-line no-undef
       tCarousel.tClear();
+    },
+    mth_Titulo(){
+      document.title = `${this.cmp_Proyecto.title} | @ovatlh`;
     },
   },
   computed: {

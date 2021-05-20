@@ -109,7 +109,7 @@ export default {
   methods: {
     mth_tCarousel_tInit() {
       // eslint-disable-next-line no-undef
-      setTimeout(tCarousel.tInit({ show_Messages: true }), 500);
+      setTimeout(tCarousel.tInit(), 500);
     },
     mth_tCarousel_tClear() {
       // eslint-disable-next-line no-undef

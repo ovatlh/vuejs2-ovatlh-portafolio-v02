@@ -18,6 +18,10 @@
   --proyecto-bg: hsl(215, 68%, 3%);
   --proyecto-shadow: hsl(215, 65%, 3%);
   --proyecto-clr: hsl(0, 0%, 100%);
+  --proyectoview-bg: hsl(215, 65%, 5%);
+  --proyectoview-clr: hsl(0, 0%, 100%);
+  --proyectoview-link-clr: hsl(0, 0%, 100%);
+  --proyectoview-icon-shadow: hsla(216, 63%, 3%, 0.4);
   --todos-bg: hsl(215, 68%, 6%);
   --todos-bg-hover: hsl(215, 68%, 3%);
   --todos-clr: hsl(0, 0%, 100%);

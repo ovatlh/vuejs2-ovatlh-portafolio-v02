@@ -22,6 +22,14 @@ const routes = [
       ),
   },
   {
+    path: "/proyecto/:id",
+    name: "Proyecto",
+    component: () =>
+      import(
+        /* webpackChunkName: "chunckProyectoView" */ "../views/Proyectos/ProyectoView.vue"
+      ),
+  },
+  {
     path: "*",
     name: "NotFound",
     component: () =>

@@ -28,5 +28,8 @@ export default {
     get_FullProyectos(state) {
       return state.full_proyectos;
     },
+    get_ProyectoByID: (state) => (id) => {
+      return state.full_proyectos.find((item) => item.id === id);
+    },
   },
 };

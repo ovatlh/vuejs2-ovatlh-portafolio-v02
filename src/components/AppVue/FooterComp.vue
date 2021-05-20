@@ -21,7 +21,7 @@ export default {
 .footer-comp {
   background-color: var(--footer-bg);
   color: var(--footer-clr);
-  padding: 10px;
+  padding: 60px 10px;
   text-align: center;
 }
 

@@ -18,6 +18,7 @@ export default {
   mounted() {
     this.mth_Load_HomeProyectos();
     this.mth_Load_ResumenProyectos();
+    this.mth_Load_FullProyectos();
   },
   data() {
     return {};
@@ -26,6 +27,7 @@ export default {
     ...mapActions({
       mth_Load_HomeProyectos: "act_Load_HomeProyectos",
       mth_Load_ResumenProyectos: "act_Load_ResumenProyectos",
+      mth_Load_FullProyectos: "act_Load_FullProyectos",
     }),
   },
   computed: {},

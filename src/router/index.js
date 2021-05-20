@@ -14,6 +14,14 @@ const routes = [
       ),
   },
   {
+    path: "/proyectos",
+    name: "Proyectos",
+    component: () =>
+      import(
+        /* webpackChunkName: "chunckProyectosView" */ "../views/Proyectos/ProyectosView.vue"
+      ),
+  },
+  {
     path: "*",
     name: "NotFound",
     component: () =>

@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 import FooterComp from "@/components/AppVue/FooterComp.vue";
 
 export default {
@@ -14,11 +15,19 @@ export default {
   },
   name: "app-vue",
   props: [],
-  mounted() {},
+  mounted() {
+    this.mth_Load_HomeProyectos();
+    this.mth_Load_ResumenProyectos();
+  },
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    ...mapActions({
+      mth_Load_HomeProyectos: "act_Load_HomeProyectos",
+      mth_Load_ResumenProyectos: "act_Load_ResumenProyectos",
+    }),
+  },
   computed: {},
 };
 </script>

@@ -1,20 +1,18 @@
 <template>
-  <router-link :to="{ path: `proyecto/${link}`}" class="proyecto-comp">
-    <img :src="bg" alt="proyecto" class="bg" />
-    <h1 class="title">Proyecto</h1>
-    <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, ad?</p>
+  <router-link :to="{ path: `proyecto/${id}` }" class="proyecto-comp" :title="title">
+    <img :src="img" alt="proyecto" class="bg" />
+    <h3 class="title">{{ title }}</h3>
+    <p class="desc">{{ desc }}</p>
   </router-link>
 </template>
 
 <script>
 export default {
   name: "proyecto-comp",
-  props: ["link"],
+  props: ["id", "img", "title", "desc"],
   mounted() {},
   data() {
-    return {
-      bg: require("@/assets/imgs/1.png"),
-    };
+    return {};
   },
   methods: {},
   computed: {},
@@ -30,6 +28,7 @@ export default {
   grid-template-areas: "BG" "Title" "Desc";
   grid-template-columns: 1fr;
   grid-template-rows: auto auto auto;
+  align-content: start;
 
   background-color: var(--proyecto-bg);
   color: var(--proyecto-clr);
@@ -48,6 +47,7 @@ export default {
   grid-area: BG;
   object-fit: cover;
   width: 100%;
+  min-height: 200px;
   max-height: 200px;
   border-radius: 6px 6px 0 0;
 }
@@ -56,6 +56,7 @@ export default {
   z-index: 2;
   grid-area: Title;
   padding: 0 10px 0 10px;
+  word-break: break-all;
 }
 
 .desc {

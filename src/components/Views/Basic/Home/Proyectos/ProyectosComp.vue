@@ -1,16 +1,18 @@
 <template>
   <div class="proyectos-comp">
     <h1 class="title">Proyectos</h1>
-    <div class="list">
-      <ProyectoComp v-for="(item, index) in 3" :key="index" :link="index + 1" />
+    <div class="list" v-if="cmp_ShowHomeProyectos">
+      <ProyectoComp v-for="(item, index) in cmp_HomeProyectos" :key="index" :id="item.id" :img="item.img" :title="item.title" :desc="item.desc" />
     </div>
-    <router-link :to="{ path: 'proyectos'}" class="todos">
+    <router-link :to="{ path: 'proyectos' }" class="todos">
       <h2>Ver todos...</h2>
     </router-link>
   </div>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 import ProyectoComp from "@/components/Views/Basic/Home/Proyectos/ProyectoComp.vue";
 
 export default {
@@ -24,7 +26,14 @@ export default {
     return {};
   },
   methods: {},
-  computed: {},
+  computed: {
+    ...mapGetters({
+      cmp_HomeProyectos: "get_HomeProyectos",
+    }),
+    cmp_ShowHomeProyectos() {
+      return this.cmp_HomeProyectos.length > 0;
+    },
+  },
 };
 </script>
 

@@ -1,7 +1,7 @@
 <template>
   <div class="contacto-comp" @click.self="mth_ContactoToggle">
     <form class="form-contacto" @submit.prevent="mth_EnviarMensaje">
-      <h4 class="title">Hola, porque no me mandas un mensaje? 😉</h4>
+      <h4 class="title">Hola, ¿qué tal si me mandas un mensaje? 😉</h4>
       <div class="input-label">
         <span>Nombre</span>
         <input type="text" required="required" v-model="name" />
@@ -98,7 +98,7 @@ export default {
 <style scoped>
 .contacto-comp {
   display: grid;
-  padding: 5px;
+  padding: 20px;
   place-items: center;
 
   position: fixed;
@@ -106,7 +106,7 @@ export default {
   top: 0;
   width: 100%;
   height: 100vh;
-  background-color: hsla(0, 0%, 0%, 0.2);
+  background-color: hsla(0, 0%, 0%, 0.4);
 }
 
 .form-contacto {
@@ -149,6 +149,7 @@ export default {
   padding-top: 5px;
   word-wrap: break-word;
   color: hsl(0, 0%, 12%);
+  text-align: center;
 }
 
 .buttons {

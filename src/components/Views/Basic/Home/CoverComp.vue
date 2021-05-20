@@ -2,7 +2,10 @@
   <div class="cover-comp">
     <img v-rellax="rellax.img04" :src="bg04" alt="bg-04" class="img img-04" />
     <div v-rellax="rellax.content" class="content">
-      <h1 class="tavo">Tavo</h1>
+      <div class="text">
+        <h1 class="tavo">Tavo</h1>
+        <p class="lh">López Hernández</p>
+      </div>
     </div>
     <img v-rellax="rellax.img03" :src="bg03" alt="bg-03" class="img img-03" />
     <img v-rellax="rellax.img02" :src="bg02" alt="bg-02" class="img img-02" />
@@ -59,10 +62,12 @@ export default {
   grid-template-areas: "Area-Cover";
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-  background-color: hsl(250, 4%, 71%)
+  background-color: hsl(250, 4%, 71%);
 }
 
-.img, .content, .shadow {
+.img,
+.content,
+.shadow {
   grid-area: Area-Cover;
 }
 
@@ -85,6 +90,11 @@ export default {
 
 .tavo {
   font-size: clamp(40px, 10vw, 300px);
+  line-height: clamp(40px, 10vw, 300px);
+}
+
+.lh {
+  text-align: center;
 }
 
 .img-03 {
@@ -104,6 +114,10 @@ export default {
   width: 100%;
   align-self: end;
   height: clamp(100px, 10vh, 200px);
-  background: linear-gradient(180deg, hsla(0, 0%, 0%, 0) 0%, var(--home-bg) 90%);
+  background: linear-gradient(
+    180deg,
+    hsla(0, 0%, 0%, 0) 0%,
+    var(--home-bg) 90%
+  );
 }
 </style>

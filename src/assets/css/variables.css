@@ -11,6 +11,8 @@
   /* Views */
   /* Home */
   --home-bg: hsl(215, 65%, 5%);
+  --text-shadow: hsl(0, 0%, 0%);
+  --redes-clr: hsl(0, 0%, 100%);
   /* Proyectos */
   --proyecto-bg: hsl(215, 68%, 3%);
   --proyecto-shadow: hsl(215, 65%, 3%);

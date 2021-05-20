@@ -9,15 +9,15 @@
       />
       <div class="desc">
         <p>
-          Hey, me llamo Ezequiel Gus<strong>tavo</strong>, y tengo
-          {{ edad }} años. Me encanta escribir código y crear cosas
+          Hey que onda, me llamo Ezequiel Gus<strong>tavo</strong>, tengo
+          {{ edad }} años y soy un full-stack developer. Me encanta escribir código y crear cosas
           interesantes.
         </p>
         <p>
           Soy egresado del <strong>ITESRC</strong> en Villa de Agujita, Coahuila
           de Zaragoza, México.
         </p>
-        <p><small>AGO 2016 - DIC 2020</small></p>
+        <p><small><i>AGO 2016 - DIC 2020</i></small></p>
         <div class="redes">
           <p>Me puedes encontrar en:</p>
           <a
@@ -26,7 +26,7 @@
             :href="item.link"
             target="_blank"
             :title="item.tootltip"
-            >{{ item.text }}</a
+            >> {{ item.text }}</a
           >
         </div>
       </div>
@@ -147,6 +147,7 @@ export default {
 .redes a {
   text-decoration: none;
   font-weight: 600;
+  color: var(--redes-clr);
 }
 
 .redes a:hover {

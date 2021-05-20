@@ -16,8 +16,8 @@
         <p>
           Soy egresado del <strong>ITESRC</strong> en Villa de Agujita, Coahuila
           de Zaragoza, México.
+          <small><i>( AGO 2016 - DIC 2020 )</i></small>
         </p>
-        <p><small><i>AGO 2016 - DIC 2020</i></small></p>
         <div class="redes">
           <p>Me puedes encontrar en:</p>
           <a

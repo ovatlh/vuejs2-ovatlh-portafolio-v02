@@ -1,6 +1,6 @@
 <template>
   <div class="home-view">
-    <CoverComp class="cover" />
+    <CoverComp class="cover" id="Inicio" />
     <ContainerComp class="container" />
   </div>
 </template>

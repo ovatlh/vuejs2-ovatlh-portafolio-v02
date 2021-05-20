@@ -1,17 +1,25 @@
 <template>
   <div class="app-vue" id="app">
-    <router-view />
-    <FooterComp />
+    <router-view class="view" />
+    <FooterComp class="footer" />
+    <NavbarPC class="pc" />
+    <NavbarMovil class="movil" />
   </div>
 </template>
 
 <script>
 import { mapActions } from "vuex";
+
+import NavbarPC from "@/components/AppVue/Navbars/NavbarPCComp.vue";
+import NavbarMovil from "@/components/AppVue/Navbars/NavbarMovilComp.vue";
+
 import FooterComp from "@/components/AppVue/FooterComp.vue";
 
 export default {
   components: {
     FooterComp,
+    NavbarPC,
+    NavbarMovil,
   },
   name: "app-vue",
   props: [],
@@ -38,5 +46,41 @@ export default {
 
 <style scoped>
 .app-vue {
+}
+
+.view {
+  z-index: 1;
+}
+
+.footer {
+  z-index: 2;
+}
+
+.pc, .movil {
+  position: fixed;
+  z-index: 3;
+}
+
+.pc {
+  left: 0;
+  top: 0;
+  width: 100%;
+  display: grid;
+}
+
+.movil {
+  display: none;
+  right: 20px;
+  bottom: 20px;
+}
+
+@media screen and (min-width: 0px) and (max-width: 767px) {
+  .pc {
+    display: none;
+  }
+
+  .movil {
+    display: grid;
+  }
 }
 </style>

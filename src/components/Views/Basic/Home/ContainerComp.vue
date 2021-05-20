@@ -1,9 +1,9 @@
 <template>
   <div class="container-comp">
-    <ProyectosComp class="proyectos" />
-    <ServiciosComp class="servicios" />
-    <TecnologiasComp class="tecnologias" />
-    <SobreMiComp class="sobremi" />
+    <ProyectosComp class="proyectos" id="Proyectos" />
+    <ServiciosComp class="servicios" id="Servicios" />
+    <TecnologiasComp class="tecnologias" id="Tecnologias" />
+    <SobreMiComp class="sobremi" id="SobreMi" />
   </div>
 </template>
 
@@ -40,7 +40,7 @@ export default {
   justify-content: center;
 }
 
-/* .proyectos, .servicios, .tecnologias, .sobremi {
-  padding: 50px 0;
-} */
+.proyectos, .servicios, .tecnologias, .sobremi {
+  padding-top: 50px;
+}
 </style>

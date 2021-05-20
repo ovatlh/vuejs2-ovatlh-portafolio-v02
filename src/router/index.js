@@ -1,5 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import { EventBus } from "@/EventBus/event-bus.js";
 
 Vue.use(VueRouter);
 
@@ -51,6 +52,27 @@ const router = new VueRouter({
     return { x: 0, y: 0 };
   },
   routes,
+});
+
+router.beforeResolve((to, from, next) => {
+  if (
+    (from.path === "/" || from.path === "/home") &&
+    (to.path === "/" || to.path === "/home")
+  ) {
+    next();
+  } else {
+    setTimeout(function() {
+      next();
+    }, 200);
+
+    EventBus.$emit("transicion-on");
+  }
+});
+
+router.afterEach(() => {
+  setTimeout(function() {
+    EventBus.$emit("transicion-off");
+  }, 200);
 });
 
 export default router;

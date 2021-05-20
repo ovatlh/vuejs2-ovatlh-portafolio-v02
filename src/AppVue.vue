@@ -8,6 +8,9 @@
     <transition name="contacto" mode="in-out">
       <ContactoComp class="contacto" v-if="showContacto" />
     </transition>
+    <transition name="transicion" mode="in-out">
+      <TransicionComp class="transicion" v-if="showTransicion" />
+    </transition>
   </div>
 </template>
 
@@ -18,6 +21,7 @@ import NavbarPC from "@/components/AppVue/Navbars/NavbarPCComp.vue";
 import NavbarMovil from "@/components/AppVue/Navbars/NavbarMovilComp.vue";
 
 import ContactoComp from "@/components/AppVue/Contacto/ContactoComp.vue";
+import TransicionComp from "@/components/AppVue/Transicion/TransicionComp.vue";
 
 import FooterComp from "@/components/AppVue/FooterComp.vue";
 
@@ -29,6 +33,7 @@ export default {
     NavbarPC,
     NavbarMovil,
     ContactoComp,
+    TransicionComp,
   },
   name: "app-vue",
   props: [],
@@ -40,6 +45,7 @@ export default {
   data() {
     return {
       showContacto: false,
+      showTransicion: false,
     };
   },
   methods: {
@@ -53,6 +59,12 @@ export default {
   created() {
     EventBus.$on("contacto-toggle", () => {
       this.showContacto = !this.showContacto;
+    });
+    EventBus.$on("transicion-on", () => {
+      this.showTransicion = true;
+    });
+    EventBus.$on("transicion-off", () => {
+      this.showTransicion = false;
     });
   },
 };
@@ -142,6 +154,38 @@ export default {
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+.transicion {
+  z-index: 5;
+}
+
+.transicion-enter-active {
+  animation: transicion-anim-in 0.1s ease-out 0s 1 normal forwards;
+}
+
+.transicion-leave-active {
+  animation: transicion-anim-out 0.1s ease-out 0s 1 normal forwards;
+}
+
+@keyframes transicion-anim-in {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes transicion-anim-out {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(100%);
   }
 }
 </style>

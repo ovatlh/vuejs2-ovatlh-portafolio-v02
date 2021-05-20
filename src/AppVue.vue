@@ -11,6 +11,7 @@
     <transition name="transicion" mode="in-out">
       <TransicionComp class="transicion" v-if="showTransicion" />
     </transition>
+    <SplashScreenComp class="splashscreen" v-if="showSplashScreen" />
   </div>
 </template>
 
@@ -22,6 +23,7 @@ import NavbarMovil from "@/components/AppVue/Navbars/NavbarMovilComp.vue";
 
 import ContactoComp from "@/components/AppVue/Contacto/ContactoComp.vue";
 import TransicionComp from "@/components/AppVue/Transicion/TransicionComp.vue";
+import SplashScreenComp from "@/components/AppVue/SplashScreen/SplashScreenComp.vue";
 
 import FooterComp from "@/components/AppVue/FooterComp.vue";
 
@@ -34,6 +36,7 @@ export default {
     NavbarMovil,
     ContactoComp,
     TransicionComp,
+    SplashScreenComp,
   },
   name: "app-vue",
   props: [],
@@ -41,11 +44,13 @@ export default {
     this.mth_Load_HomeProyectos();
     this.mth_Load_ResumenProyectos();
     this.mth_Load_FullProyectos();
+    this.mth_SplashScreen();
   },
   data() {
     return {
       showContacto: false,
       showTransicion: false,
+      showSplashScreen: true,
     };
   },
   methods: {
@@ -54,6 +59,9 @@ export default {
       mth_Load_ResumenProyectos: "act_Load_ResumenProyectos",
       mth_Load_FullProyectos: "act_Load_FullProyectos",
     }),
+    mth_SplashScreen() {
+      EventBus.$emit("splashscreen-start");
+    },
   },
   computed: {},
   created() {
@@ -65,6 +73,9 @@ export default {
     });
     EventBus.$on("transicion-off", () => {
       this.showTransicion = false;
+    });
+    EventBus.$on("splashscreen-off", () => {
+      this.showSplashScreen = false;
     });
   },
 };
@@ -187,5 +198,9 @@ export default {
   to {
     transform: translateX(100%);
   }
+}
+
+.splashscreen {
+  z-index: 6;
 }
 </style>

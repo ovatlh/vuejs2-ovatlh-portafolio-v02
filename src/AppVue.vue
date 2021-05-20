@@ -4,6 +4,10 @@
     <FooterComp class="footer" />
     <NavbarPC class="pc" />
     <NavbarMovil class="movil" />
+
+    <transition name="contacto" mode="in-out">
+      <ContactoComp class="contacto" v-if="showContacto" />
+    </transition>
   </div>
 </template>
 
@@ -13,13 +17,18 @@ import { mapActions } from "vuex";
 import NavbarPC from "@/components/AppVue/Navbars/NavbarPCComp.vue";
 import NavbarMovil from "@/components/AppVue/Navbars/NavbarMovilComp.vue";
 
+import ContactoComp from "@/components/AppVue/Contacto/ContactoComp.vue";
+
 import FooterComp from "@/components/AppVue/FooterComp.vue";
+
+import { EventBus } from "@/EventBus/event-bus.js";
 
 export default {
   components: {
     FooterComp,
     NavbarPC,
     NavbarMovil,
+    ContactoComp,
   },
   name: "app-vue",
   props: [],
@@ -29,7 +38,9 @@ export default {
     this.mth_Load_FullProyectos();
   },
   data() {
-    return {};
+    return {
+      showContacto: false,
+    };
   },
   methods: {
     ...mapActions({
@@ -39,6 +50,11 @@ export default {
     }),
   },
   computed: {},
+  created() {
+    EventBus.$on("contacto-toggle", () => {
+      this.showContacto = !this.showContacto;
+    });
+  },
 };
 </script>
 
@@ -102,6 +118,30 @@ export default {
 
   .movil {
     display: grid;
+  }
+}
+
+.contacto {
+  z-index: 4;
+}
+
+.contacto-enter-active {
+  animation: contacto-anim 0.1s ease-in-out 0s 1 normal forwards;
+}
+
+.contacto-leave-active {
+  animation: contacto-anim 0.1s ease-in-out 0s 1 reverse forwards;
+}
+
+@keyframes contacto-anim {
+  from {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 </style>
